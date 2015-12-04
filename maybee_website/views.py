@@ -26,7 +26,7 @@ def map(request):
 	return render(request, 'map.html', locals())
 
 def enfant_conte(request):
-	return render(request, 'enfant.html', locals())
+	return render(request, 'enfant_conte.html', locals())
 
 def profil(request):
 	if request.method == 'POST':
