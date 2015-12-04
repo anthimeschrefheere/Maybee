@@ -51,5 +51,5 @@ def apiculteurs(request):
 	else:
 		form = DataForm
 	
-	return render(request,'apiculteurs.html', locals())
+	return render(request,'apiculteur.html', locals())
 
