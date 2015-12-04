@@ -89,7 +89,7 @@
                 <h1>May the Force BEE With YOU</h1>
                 <hr>
                 <p><b>Le site qui vous explique comment protéger les abeilles</b></p>
-                <a href="#about" class="btn btn-primary btn-xl page-scroll">Découvrez en plus</a>
+                <a href="#about" class="btn btn-primary btn-xl page-scroll">entrer vos noms et prénoms et les informations sur votre exploitation </a>
             </div>
         </div>
     </header>
@@ -100,11 +100,65 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 " align="justify">
-                  
-                    <form method='post' role="form">
-                         {{ form.as_p }}
-                    <input type='submit' value='valider' class="btn btn-default">{% csrf_token %}
-                    </form>	
+                        <script type="text/javascript">
+            var map;
+            function initMap() {
+                map = new google.maps.Map(document.getElementById('map'), {zoom: 12, center: {lat: -34.397, lng: 150.644}});
+                var myLatLn = geolocation();
+                var geocoder = new google.maps.Geocoder();
+                var address = ['France','Université de Bordeaux, Talence', '5 rue des Monneries', "23 impasse du bois d'amour"];
+                geocodeAddress(geocoder, map, address);
+                }
+            function geocodeAddress(geocoder, resultsMap, address) {
+                for (var i = 0; i < address.length; i++){
+                    geocoder.geocode({'address': address[i]}, function(results, status) {
+                        if (status === google.maps.GeocoderStatus.OK) {
+                        var marker = new google.maps.Marker({map: resultsMap, position: results[0].geometry.location});
+                        addInfoWindow(marker);
+                    }
+                        else {
+                            alert('Geocode was not successful for the following reason: ' + status);
+                        }
+                    });
+                }
+            }
+            function geolocation(){
+                if (navigator.geolocation){
+                    navigator.geolocation.getCurrentPosition(function(position){
+                        var pos = {lat : position.coords.latitude, lng : position.coords.longitude};
+                        map.setCenter(pos);
+                    }, function(){
+                        handleLocationError(true, map.getCenter());
+                    });
+                }
+                else{
+                     handleLocationError(false, map.getCenter());   
+                }
+            }
+            function handleLocationError(browserHasGeolocation, pos) {
+                alert('Error : The Geolocation service failed.');
+            }
+            function addInfoWindow(marker){
+                var contentString = '<div id = "content">'+'<div id="siteNotice">'+
+                '</div>'+
+                '<h1 id="firstHeading" class="firstHeading">Teapot</h1>'+
+                '<div id="bodyContent">'+
+                '<b>418</b> I\'m a teapot'+
+                '<p><a href="https://fr.wikipedia.org/wiki/Hyper_Text_Coffee_Pot_Control_Protocol#Codes_d.27erreur">wiki</a> '+
+                '</p>'+
+                '</div>'+
+                '</div>';
+                var infowindow = new google.maps.InfoWindow({content: contentString});
+                marker.addListener('click', function() {
+                    infowindow.open(map, marker);
+                });
+            }
+        </script>
+        <script async defer
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_1SeD8bwOsB126JQAqU8gjEDoXx1G4uA&callback=initMap">
+        </script>
+              
+                    
                 </div>
                 
             </div>

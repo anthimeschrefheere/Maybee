@@ -22,6 +22,9 @@ def conseils(request):
 def biblio(request):
 	return render(request, 'biblio.html', locals())
 
+def map(request):
+	return render(request, 'map.html', locals())
+
 def profil(request):
 	if request.method == 'POST':
 		form = ProfileForm(request.POST)
