@@ -32,7 +32,7 @@ def nous(request):
 	return render(request, 'nous.html', locals())
 
 def jeu(request):
-	return render(request, 'jeu.html', locals())
+	return render(request, 'Jeu.html', locals())
 
 def profil(request):
 	if request.method == 'POST':
