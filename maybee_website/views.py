@@ -19,6 +19,9 @@ def presentation(request):
 def conseils(request):
 	return render(request, 'conseils.html', locals())
 
+def biblio(request):
+	return render(request, 'biblio.html', locals())
+
 def profil(request):
 	if request.method == 'POST':
 		form = ProfileForm(request.POST)
