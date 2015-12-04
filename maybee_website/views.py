@@ -28,6 +28,12 @@ def map(request):
 def enfant_conte(request):
 	return render(request, 'Enfant_conte.html', locals())
 
+def nous(request):
+	return render(request, 'nous.html', locals())
+
+def jeu(request):
+	return render(request, 'jeu.html', locals())
+
 def profil(request):
 	if request.method == 'POST':
 		form = ProfileForm(request.POST)
