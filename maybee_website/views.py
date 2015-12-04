@@ -13,6 +13,9 @@ from maybee_website.models import profil,Data
 def home(request):
 	return render(request, 'Home.html', locals())
 
+def presentation(request):
+	return render(request, 'presentation.html', locals())
+
 def profil(request):
 	if request.method == 'POST':
 		form = ProfileForm(request.POST)
