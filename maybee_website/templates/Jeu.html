@@ -53,28 +53,28 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a class="page-scroll" href="#about">Qui sommes nous?</a>
+                        <a class="page-scroll" href="{% url "maybee_website.views.nous" %}">Qui sommes nous?</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#services1">Prévention:présentation</a>
+                        <a class="page-scroll" href="{% url "maybee_website.views.presentation" %}">Prévention:présentation</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#services2">Prévention:conseil</a>
+                        <a class="page-scroll" href="{% url "maybee_website.views.conseil" %}">Prévention:conseil</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#portfolio">Apiculteurs, aidez la recherche!</a>
+                        <a class="page-scroll" href="{% url "maybee_website.views.apiculteurs" %}">Apiculteurs, aidez la recherche!</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#map">Apiculteurs, la map des abeilles!</a>
+                        <a class="page-scroll" href="{% url "maybee_website.views.map" %}">Apiculteurs, la map des abeilles!</a>
                     </li>                    
                     <li>
-                        <a class="page-scroll" href="#contact">Jeux</a>
+                        <a class="page-scroll" href="{% url "maybee_website.views.jeu" %}">Jeux</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#contact">Espace Enfants</a>
+                        <a class="page-scroll" href="{% url "maybee_website.views.enfant_conte" %}">Espace Enfants</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#contact">Bibliographie</a>
+                        <a class="page-scroll" href="{% url "maybee_website.views.biblio" %}">Bibliographie</a>
                     </li>
                 </ul>
             </div>
