@@ -25,6 +25,9 @@ def biblio(request):
 def map(request):
 	return render(request, 'map.html', locals())
 
+def enfant_conte(request):
+	return render(request, 'enfant.html', locals())
+
 def profil(request):
 	if request.method == 'POST':
 		form = ProfileForm(request.POST)
