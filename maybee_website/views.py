@@ -16,6 +16,9 @@ def home(request):
 def presentation(request):
 	return render(request, 'presentation.html', locals())
 
+def conseils(request):
+	return render(request, 'conseils.html', locals())
+
 def profil(request):
 	if request.method == 'POST':
 		form = ProfileForm(request.POST)
